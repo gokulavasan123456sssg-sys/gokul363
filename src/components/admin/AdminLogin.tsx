@@ -24,7 +24,7 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onSuccess, onClose }) =>
         onSuccess();
       } else {
         CinematicAudio.playClick();
-        setError('Invalid Security Passkey. Default key is: gokul2026');
+        setError('Invalid Security Passkey. Please try again.');
       }
       setIsLoading(false);
     }, 400);
@@ -75,14 +75,11 @@ export const AdminLogin: React.FC<AdminLoginProps> = ({ onSuccess, onClose }) =>
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter passkey (default: gokul2026)"
+                placeholder="Enter secret passkey"
                 className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#121216] border border-[#261a1a] focus:border-[#FF5A00] focus:outline-none text-white text-xs font-mono placeholder-gray-600 transition-colors"
               />
               <Key className="w-4 h-4 text-gray-500 absolute left-3.5 top-3.5" />
             </div>
-            <p className="text-[10px] text-gray-500 font-mono mt-1.5">
-              * Default master key: <code className="text-[#FF9B24]">gokul2026</code>
-            </p>
           </div>
 
           <button

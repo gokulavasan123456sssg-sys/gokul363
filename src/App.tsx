@@ -34,9 +34,22 @@ export function App() {
 
   useEffect(() => {
     // Check if URL is /admin or #admin
-    if (window.location.pathname === '/admin' || window.location.hash === '#admin') {
-      setIsAdminOpen(true);
-    }
+    const checkAdminHash = () => {
+      if (window.location.pathname === '/admin' || window.location.hash === '#admin') {
+        setIsAdminOpen(true);
+      }
+    };
+    checkAdminHash();
+    window.addEventListener('hashchange', checkAdminHash);
+
+    // Secret shortcut: Ctrl + Shift + A to open admin portal
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
+        e.preventDefault();
+        setIsAdminOpen(prev => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
 
     // Load dynamic data from StorageService (Supabase or local sync)
     async function loadData() {
@@ -53,6 +66,11 @@ export function App() {
       setEducation(edu);
     }
     loadData();
+
+    return () => {
+      window.removeEventListener('hashchange', checkAdminHash);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
   }, []);
 
   const handleAdminSuccess = () => {

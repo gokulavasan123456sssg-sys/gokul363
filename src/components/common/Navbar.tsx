@@ -127,18 +127,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmin, resumeUrl }) => {
               <span>Resume</span>
             </a>
 
-            {/* Admin Shield Button */}
-            <button
-              onClick={() => {
-                CinematicAudio.playClick();
-                onOpenAdmin();
-              }}
-              title="Admin CMS Portal"
-              className="p-2 rounded-md bg-[#121216] border border-[#261a1a] text-gray-400 hover:text-[#FF9B24] hover:border-[#FF5A00]/50 transition-all"
-            >
-              <ShieldCheck className="w-4 h-4" />
-            </button>
-
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -177,16 +165,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAdmin, resumeUrl }) => {
                   <Download className="w-4 h-4" />
                   Download Resume
                 </a>
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenAdmin();
-                  }}
-                  className="flex items-center justify-center gap-2 py-2.5 rounded-md text-xs font-bold tracking-wider bg-[#121216] border border-[#261a1a] text-gray-300 text-center"
-                >
-                  <ShieldCheck className="w-4 h-4 text-[#FF9B24]" />
-                  Admin CMS Portal
-                </button>
               </div>
             </nav>
           </div>

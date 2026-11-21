@@ -38,17 +38,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
           <span>Crafted for Tamil Cinema Grandeur & High-Impact Visual Storytelling</span>
         </div>
 
-        {/* Right actions: Scroll to top + Admin CMS portal */}
+        {/* Right actions: Scroll to top */}
         <div className="flex items-center gap-4">
-          <button
-            onClick={onOpenAdmin}
-            title="Private Admin Dashboard"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#121216] border border-[#261a1a] hover:border-[#FF5A00] text-gray-400 hover:text-[#FF9B24] transition-colors font-mono text-[11px]"
-          >
-            <ShieldCheck className="w-3.5 h-3.5 text-[#FF5A00]" />
-            <span>Admin CMS</span>
-          </button>
-
           <button
             onClick={scrollToTop}
             title="Scroll to Top"

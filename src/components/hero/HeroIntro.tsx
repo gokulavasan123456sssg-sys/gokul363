@@ -99,26 +99,6 @@ export const HeroIntro: React.FC<HeroIntroProps> = ({ profile, onResumeClick }) 
         <div className="absolute inset-0 bg-radial from-transparent via-[#050505]/60 to-[#050505]" />
       </div>
 
-      {/* Skip / Replay Controls */}
-      <div className="absolute top-24 right-6 z-30">
-        <button
-          onClick={handleSkipOrReplay}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#121216]/80 hover:bg-[#1a1a22] border border-[#261a1a] text-xs font-mono text-gray-400 hover:text-[#FF9B24] transition-all backdrop-blur-sm"
-        >
-          {stage < 3 ? (
-            <>
-              <span>SKIP INTRO</span>
-              <ArrowDown className="w-3 h-3 rotate-[-90deg]" />
-            </>
-          ) : (
-            <>
-              <RotateCcw className="w-3 h-3 text-[#FF5A00]" />
-              <span>REPLAY MASS INTRO</span>
-            </>
-          )}
-        </button>
-      </div>
-
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center">
         
         {/* Tamil Cinema Mass Banner Pre-title */}

@@ -1,5 +1,7 @@
 # Dependencies
 node_modules
+tools
+mingit.zip
 .pnp
 .pnp.js
 
